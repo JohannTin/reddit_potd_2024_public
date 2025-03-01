@@ -33,8 +33,8 @@ def clean_data(df):
     
     # Drop rows where 'Pick' is NaN or 'N/A'
     if 'Pick' in df.columns:
-        df = df.dropna(subset=['Pick'])  # Drop NaN values in 'Pick' column
-        df = df[df['Pick'].str.strip().str.upper() != 'N/A']  # Drop rows where 'Pick' is explicitly 'N/A'
+        df = df.dropna(subset=['Pick']) 
+        df = df[df['Pick'].str.strip().str.upper() != 'N/A']
     else:
         print("Warning: 'Pick' column not found in the dataset.")
 
@@ -66,7 +66,7 @@ def extract_and_validate_odds(odds_str):
         if 1.5 <= decimal_odds <= 3.0:
             return decimal_odds
         else:
-            return 1.86  # Default if out of range
+            return 1.86 
 
     # If already in decimal format, just return as float
     try:
@@ -76,7 +76,7 @@ def extract_and_validate_odds(odds_str):
         else:
             return 1.86  # Default if out of range
     except ValueError:
-        return 1.86  # Default if invalid
+        return 1.86 
 
 def convert_american_to_decimal(american_odds):
     """Converts American odds to decimal odds."""
@@ -105,24 +105,19 @@ def save_csv(df, output_file_path):
         print(f"Error saving file: {e}")
 
 def main():
-    # Define file paths
     input_file_path = "data/llm_POTD_identified.csv"
     output_file_path = "data/2024_llm_POTD_identified_clean.csv"
 
-    # Load data
     df = load_csv(input_file_path)
     if df is None:
         return
 
-    # Filter data
     filtered_df = filter_columns(df, 'Extracted_Date', 'Unit')
     if filtered_df is None:
         return
 
-    # Clean data: Remove invalid "Pick" rows, clean "Odds" and "Unit"
     cleaned_df = clean_data(filtered_df)
 
-    # Save cleaned data
     save_csv(cleaned_df, output_file_path)
 
 if __name__ == "__main__":
