@@ -21,7 +21,7 @@ Below is a breakdown of the key folders and files you’ll find in this reposito
 
 #### `data/`
 - **2024_llm_POTD_identified_clean.csv**  
-  A CSV file containing POTD data for 2024 that has been processed to identify certain fields suitable for LLM input. Data is “clean” in the sense that extraneous information or noise has been removed.
+  A CSV file containing POTD data for 2024 that has been processed to identify certain fields suitable for LLM input.
 
 - **2024_POTD_cleaned.csv**  
   A cleaned CSV of the 2024 “Post of the Day” data. May include standardized columns, filtered rows, or normalized text.
