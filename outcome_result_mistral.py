@@ -65,7 +65,7 @@ def process_comments(df):
     return structured_data
 
 def track_previous_pick_results(df):
-    """Check if the same author mentions their previous pick and its result. Only check if the author match for the next day only. Be 100% sure else return nan."""
+    """Check if the same author mentions their previous pick and its result. Only check if the author match for the next day only."""
     df["Previous_Pick_Result"] = ""
     
     for i in range(1, len(df)):
@@ -84,13 +84,11 @@ def main():
     input_file_path = "data/2024_llm_POTD_identified_clean.csv"
     output_file_path = "data/2024_result.csv"
 
-    # Load data
     df = load_data(input_file_path)
     if df is None:
         logging.error("Failed to load data.")
         return
-    
-    # Ensure required columns exist
+        
     if 'Comment_Text' not in df.columns or 'Comment_Author' not in df.columns:
         logging.error("Missing required columns in data.")
         return
