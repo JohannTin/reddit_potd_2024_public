@@ -11,7 +11,7 @@ Disclaimer: This project does not promote or endorse gambling. If you choose to 
 
 ## Overview
 
-This repository contains scripts, notebooks, and data related to analyzing “Pick of the Day” (POTD) entries for the years 2024. It includes data extraction from links, cleaning for large language model (LLM) processing, and outcome analysis. The goal is to see the relationship if any between the POTD and user engagement 
+This repository contains scripts, notebooks, and data related to analyzing “Pick of the Day” (POTD) entries for the years 2024. It includes data extraction from links, cleaning for large language model (LLM) processing, and outcome analysis. The goal is to see the relationship if any between the POTD and user engagement.
 
 ---
 
