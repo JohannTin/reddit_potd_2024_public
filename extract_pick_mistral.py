@@ -12,13 +12,11 @@ import torch
 # Force Ollama to use CUDA if available
 os.environ["OLLAMA_ACCELERATOR"] = "cuda"
 
-# Check if CUDA is available
 if torch.cuda.is_available():
     print(f"CUDA is available. Using GPU: {torch.cuda.get_device_name(0)}")
 else:
     print("CUDA is not available, using CPU instead.")
 
-# Configure Logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 def load_data(file_path):
