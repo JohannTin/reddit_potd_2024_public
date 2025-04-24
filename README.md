@@ -1,4 +1,4 @@
-# Project Title
+# Reddit POTD Analysis
 
 A small project I worked on: Data analysis on reddit r/sportsbook POTD. Data collection by scraping Reddit's r/sportbook (praw) and gathered the top 10 daily comments from the POTD flair.
 
